@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "gr03+x90dAI=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\kus16\\OneDrive\\Рабочий стол\\Institute\\СУБД\\Курсач\\Kursach\\Music_store.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kus16\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\kus16\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.2\\microsoft.extensions.dependencyinjection.abstractions.8.0.2.nupkg.sha512",
+    "C:\\Users\\kus16\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.2\\microsoft.extensions.logging.abstractions.8.0.2.nupkg.sha512",
+    "C:\\Users\\kus16\\.nuget\\packages\\npgsql\\9.0.2\\npgsql.9.0.2.nupkg.sha512",
+    "C:\\Users\\kus16\\.nuget\\packages\\system.data.datasetextensions\\4.5.0\\system.data.datasetextensions.4.5.0.nupkg.sha512",
+    "C:\\Users\\kus16\\.nuget\\packages\\microsoft.net.sdk.compilers.toolset\\9.0.101\\microsoft.net.sdk.compilers.toolset.9.0.101.nupkg.sha512"
+  ],
+  "logs": []
+}
