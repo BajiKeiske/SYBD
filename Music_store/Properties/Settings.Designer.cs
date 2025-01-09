@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Kursach.Properties {
+namespace Music_store.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

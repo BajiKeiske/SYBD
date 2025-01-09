@@ -2,8 +2,8 @@
   <PropertyGroup>
     <TargetFramework>net9.0-windows</TargetFramework>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Kursach</RootNamespace>
-    <AssemblyName>Kursach</AssemblyName>
+    <RootNamespace>Music_store</RootNamespace>
+    <AssemblyName>Music_store</AssemblyName>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <UseWindowsForms>true</UseWindowsForms>
     <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>

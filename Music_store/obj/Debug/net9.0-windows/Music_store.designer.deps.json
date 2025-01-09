@@ -6,16 +6,6 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v9.0": {
-      "Kursach/1.0.0": {
-        "dependencies": {
-          "Microsoft.CSharp": "4.7.0",
-          "Npgsql": "9.0.2",
-          "System.Data.DataSetExtensions": "4.5.0"
-        },
-        "runtime": {
-          "Kursach.dll": {}
-        }
-      },
       "Microsoft.CSharp/4.7.0": {},
       "Microsoft.Extensions.DependencyInjection.Abstractions/8.0.2": {
         "runtime": {
@@ -47,15 +37,17 @@
           }
         }
       },
-      "System.Data.DataSetExtensions/4.5.0": {}
+      "System.Data.DataSetExtensions/4.5.0": {
+        "runtime": {
+          "lib/netstandard2.0/System.Data.DataSetExtensions.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.6.26515.6"
+          }
+        }
+      }
     }
   },
   "libraries": {
-    "Kursach/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
     "Microsoft.CSharp/4.7.0": {
       "type": "package",
       "serviceable": true,

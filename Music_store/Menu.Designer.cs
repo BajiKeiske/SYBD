@@ -34,6 +34,8 @@
             ensembles = new System.Windows.Forms.Button();
             records = new System.Windows.Forms.Button();
             clientele = new System.Windows.Forms.Button();
+            pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // musicians
@@ -43,7 +45,7 @@
             musicians.BackgroundImage = (System.Drawing.Image)resources.GetObject("musicians.BackgroundImage");
             musicians.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             musicians.Image = (System.Drawing.Image)resources.GetObject("musicians.Image");
-            musicians.Location = new System.Drawing.Point(39, 218);
+            musicians.Location = new System.Drawing.Point(2, 72);
             musicians.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             musicians.Name = "musicians";
             musicians.Size = new System.Drawing.Size(159, 72);
@@ -60,7 +62,7 @@
             compositions.BackgroundImage = (System.Drawing.Image)resources.GetObject("compositions.BackgroundImage");
             compositions.Cursor = System.Windows.Forms.Cursors.Hand;
             compositions.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            compositions.Location = new System.Drawing.Point(369, 218);
+            compositions.Location = new System.Drawing.Point(2, 232);
             compositions.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             compositions.Name = "compositions";
             compositions.Size = new System.Drawing.Size(159, 72);
@@ -77,7 +79,7 @@
             ensembles.BackgroundImage = (System.Drawing.Image)resources.GetObject("ensembles.BackgroundImage");
             ensembles.Cursor = System.Windows.Forms.Cursors.Hand;
             ensembles.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            ensembles.Location = new System.Drawing.Point(534, 218);
+            ensembles.Location = new System.Drawing.Point(2, 312);
             ensembles.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             ensembles.Name = "ensembles";
             ensembles.Size = new System.Drawing.Size(159, 72);
@@ -94,7 +96,7 @@
             records.BackgroundImage = (System.Drawing.Image)resources.GetObject("records.BackgroundImage");
             records.Cursor = System.Windows.Forms.Cursors.Hand;
             records.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            records.Location = new System.Drawing.Point(204, 218);
+            records.Location = new System.Drawing.Point(2, 152);
             records.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             records.Name = "records";
             records.Size = new System.Drawing.Size(159, 72);
@@ -111,7 +113,7 @@
             clientele.BackgroundImage = (System.Drawing.Image)resources.GetObject("clientele.BackgroundImage");
             clientele.Cursor = System.Windows.Forms.Cursors.Hand;
             clientele.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            clientele.Location = new System.Drawing.Point(696, 218);
+            clientele.Location = new System.Drawing.Point(2, 388);
             clientele.Margin = new System.Windows.Forms.Padding(0);
             clientele.Name = "clientele";
             clientele.Size = new System.Drawing.Size(159, 72);
@@ -121,12 +123,23 @@
             clientele.UseVisualStyleBackColor = false;
             clientele.Click += clientele_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = System.Drawing.SystemColors.WindowText;
+            pictureBox1.InitialImage = (System.Drawing.Image)resources.GetObject("pictureBox1.InitialImage");
+            pictureBox1.Location = new System.Drawing.Point(-8, -1);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new System.Drawing.Size(992, 66);
+            pictureBox1.TabIndex = 5;
+            pictureBox1.TabStop = false;
+            // 
             // Menu
             // 
             AccessibleRole = System.Windows.Forms.AccessibleRole.PageTabList;
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(996, 682);
+            Controls.Add(pictureBox1);
             Controls.Add(clientele);
             Controls.Add(records);
             Controls.Add(ensembles);
@@ -134,8 +147,9 @@
             Controls.Add(musicians);
             Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             Name = "Menu";
-            Text = "Menu";
+            Text = "Меню";
             Load += Form1_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -146,6 +160,7 @@
         private System.Windows.Forms.Button ensembles;
         private System.Windows.Forms.Button records;
         private System.Windows.Forms.Button clientele;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

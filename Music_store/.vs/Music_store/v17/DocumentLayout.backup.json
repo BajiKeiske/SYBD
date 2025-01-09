@@ -3,16 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\kus16\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\Institute\\\u0421\u0423\u0411\u0414\\\u041A\u0443\u0440\u0441\u0430\u0447\\Kursach\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{66C657E0-8639-4FF8-91F0-F323ADB75AB9}|Music_store.csproj|C:\\Users\\kus16\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\Institute\\\u0421\u0423\u0411\u0414\\\u041A\u0443\u0440\u0441\u0430\u0447\\Kursach\\clientsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{66C657E0-8639-4FF8-91F0-F323ADB75AB9}|Music_store.csproj|solutionrelative:clientsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{66C657E0-8639-4FF8-91F0-F323ADB75AB9}|Music_store.csproj|c:\\users\\kus16\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\institute\\\u0441\u0443\u0431\u0434\\\u043A\u0443\u0440\u0441\u0430\u0447\\kursach\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{66C657E0-8639-4FF8-91F0-F323ADB75AB9}|Music_store.csproj|solutionrelative:app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{66C657E0-8639-4FF8-91F0-F323ADB75AB9}|Music_store.csproj|c:\\users\\kus16\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\institute\\\u0441\u0443\u0431\u0434\\\u043A\u0443\u0440\u0441\u0430\u0447\\kursach\\addclientform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{66C657E0-8639-4FF8-91F0-F323ADB75AB9}|Music_store.csproj|solutionrelative:addclientform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{66C657E0-8639-4FF8-91F0-F323ADB75AB9}|Music_store.csproj|c:\\users\\kus16\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\institute\\\u0441\u0443\u0431\u0434\\\u043A\u0443\u0440\u0441\u0430\u0447\\kursach\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{66C657E0-8639-4FF8-91F0-F323ADB75AB9}|Music_store.csproj|solutionrelative:database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66C657E0-8639-4FF8-91F0-F323ADB75AB9}|Music_store.csproj|c:\\users\\kus16\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\institute\\\u0441\u0443\u0431\u0434\\\u043A\u0443\u0440\u0441\u0430\u0447\\kursach\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66C657E0-8639-4FF8-91F0-F323ADB75AB9}|Music_store.csproj|solutionrelative:client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66C657E0-8639-4FF8-91F0-F323ADB75AB9}|Music_store.csproj|C:\\Users\\kus16\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\Institute\\\u0421\u0423\u0411\u0414\\\u041A\u0443\u0440\u0441\u0430\u0447\\Kursach\\clientsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{66C657E0-8639-4FF8-91F0-F323ADB75AB9}|Music_store.csproj|solutionrelative:clientsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66C657E0-8639-4FF8-91F0-F323ADB75AB9}|Music_store.csproj|C:\\Users\\kus16\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\Institute\\\u0421\u0423\u0411\u0414\\\u041A\u0443\u0440\u0441\u0430\u0447\\Kursach\\editclientform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{66C657E0-8639-4FF8-91F0-F323ADB75AB9}|Music_store.csproj|solutionrelative:editclientform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66C657E0-8639-4FF8-91F0-F323ADB75AB9}|Music_store.csproj|c:\\users\\kus16\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\institute\\\u0441\u0443\u0431\u0434\\\u043A\u0443\u0440\u0441\u0430\u0447\\kursach\\editclientform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66C657E0-8639-4FF8-91F0-F323ADB75AB9}|Music_store.csproj|solutionrelative:editclientform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66C657E0-8639-4FF8-91F0-F323ADB75AB9}|Music_store.csproj|c:\\users\\kus16\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\institute\\\u0441\u0443\u0431\u0434\\\u043A\u0443\u0440\u0441\u0430\u0447\\kursach\\musiciansform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66C657E0-8639-4FF8-91F0-F323ADB75AB9}|Music_store.csproj|solutionrelative:musiciansform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66C657E0-8639-4FF8-91F0-F323ADB75AB9}|Music_store.csproj|C:\\Users\\kus16\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\Institute\\\u0421\u0423\u0411\u0414\\\u041A\u0443\u0440\u0441\u0430\u0447\\Kursach\\musiciansform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{66C657E0-8639-4FF8-91F0-F323ADB75AB9}|Music_store.csproj|solutionrelative:musiciansform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{66C657E0-8639-4FF8-91F0-F323ADB75AB9}|Music_store.csproj|c:\\users\\kus16\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\institute\\\u0441\u0443\u0431\u0434\\\u043A\u0443\u0440\u0441\u0430\u0447\\kursach\\clientsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66C657E0-8639-4FF8-91F0-F323ADB75AB9}|Music_store.csproj|solutionrelative:clientsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,56 +46,133 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EditClientForm.cs",
+              "DocumentMoniker": "C:\\Users\\kus16\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\Institute\\\u0421\u0423\u0411\u0414\\\u041A\u0443\u0440\u0441\u0430\u0447\\Kursach\\EditClientForm.cs",
+              "RelativeDocumentMoniker": "EditClientForm.cs",
+              "ToolTip": "C:\\Users\\kus16\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\Institute\\\u0421\u0423\u0411\u0414\\\u041A\u0443\u0440\u0441\u0430\u0447\\Kursach\\EditClientForm.cs",
+              "RelativeToolTip": "EditClientForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T01:43:25.986Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AddClientForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "DocumentMoniker": "C:\\Users\\kus16\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\Institute\\\u0421\u0423\u0411\u0414\\\u041A\u0443\u0440\u0441\u0430\u0447\\Kursach\\AddClientForm.cs",
+              "RelativeDocumentMoniker": "AddClientForm.cs",
+              "ToolTip": "C:\\Users\\kus16\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\Institute\\\u0421\u0423\u0411\u0414\\\u041A\u0443\u0440\u0441\u0430\u0447\\Kursach\\AddClientForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]*",
+              "RelativeToolTip": "AddClientForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T15:50:04.954Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "App.config",
-              "DocumentMoniker": "C:\\Users\\kus16\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\Institute\\\u0421\u0423\u0411\u0414\\\u041A\u0443\u0440\u0441\u0430\u0447\\Kursach\\App.config",
-              "RelativeDocumentMoniker": "App.config",
-              "ToolTip": "C:\\Users\\kus16\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\Institute\\\u0421\u0423\u0411\u0414\\\u041A\u0443\u0440\u0441\u0430\u0447\\Kursach\\App.config",
-              "RelativeToolTip": "App.config",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2025-01-06T22:42:24.203Z",
+              "DocumentIndex": 6,
+              "Title": "MusiciansForm.cs",
+              "DocumentMoniker": "C:\\Users\\kus16\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\Institute\\\u0421\u0423\u0411\u0414\\\u041A\u0443\u0440\u0441\u0430\u0447\\Kursach\\MusiciansForm.cs",
+              "RelativeDocumentMoniker": "MusiciansForm.cs",
+              "ToolTip": "C:\\Users\\kus16\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\Institute\\\u0421\u0423\u0411\u0414\\\u041A\u0443\u0440\u0441\u0430\u0447\\Kursach\\MusiciansForm.cs",
+              "RelativeToolTip": "MusiciansForm.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwB8AAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T01:54:20.149Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Database.cs",
-              "DocumentMoniker": "C:\\Users\\kus16\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\Institute\\\u0421\u0423\u0411\u0414\\\u041A\u0443\u0440\u0441\u0430\u0447\\Kursach\\Database.cs",
-              "RelativeDocumentMoniker": "Database.cs",
-              "ToolTip": "C:\\Users\\kus16\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\Institute\\\u0421\u0423\u0411\u0414\\\u041A\u0443\u0440\u0441\u0430\u0447\\Kursach\\Database.cs",
-              "RelativeToolTip": "Database.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "MusiciansForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "DocumentMoniker": "C:\\Users\\kus16\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\Institute\\\u0421\u0423\u0411\u0414\\\u041A\u0443\u0440\u0441\u0430\u0447\\Kursach\\MusiciansForm.cs",
+              "RelativeDocumentMoniker": "MusiciansForm.cs",
+              "ToolTip": "C:\\Users\\kus16\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\Institute\\\u0421\u0423\u0411\u0414\\\u041A\u0443\u0440\u0441\u0430\u0447\\Kursach\\MusiciansForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "RelativeToolTip": "MusiciansForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-06T22:41:32.511Z"
+              "WhenOpened": "2025-01-09T01:54:16.851Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
+              "Title": "EditClientForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "DocumentMoniker": "C:\\Users\\kus16\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\Institute\\\u0421\u0423\u0411\u0414\\\u041A\u0443\u0440\u0441\u0430\u0447\\Kursach\\EditClientForm.cs",
+              "RelativeDocumentMoniker": "EditClientForm.cs",
+              "ToolTip": "C:\\Users\\kus16\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\Institute\\\u0421\u0423\u0411\u0414\\\u041A\u0443\u0440\u0441\u0430\u0447\\Kursach\\EditClientForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "RelativeToolTip": "EditClientForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-09T01:44:30.842Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "ClientsForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
               "DocumentMoniker": "C:\\Users\\kus16\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\Institute\\\u0421\u0423\u0411\u0414\\\u041A\u0443\u0440\u0441\u0430\u0447\\Kursach\\ClientsForm.cs",
               "RelativeDocumentMoniker": "ClientsForm.cs",
               "ToolTip": "C:\\Users\\kus16\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\Institute\\\u0421\u0423\u0411\u0414\\\u041A\u0443\u0440\u0441\u0430\u0447\\Kursach\\ClientsForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
               "RelativeToolTip": "ClientsForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-06T22:34:01.198Z",
+              "WhenOpened": "2025-01-08T21:16:30.445Z",
               "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ClientsForm.cs",
+              "DocumentMoniker": "C:\\Users\\kus16\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\Institute\\\u0421\u0423\u0411\u0414\\\u041A\u0443\u0440\u0441\u0430\u0447\\Kursach\\ClientsForm.cs",
+              "RelativeDocumentMoniker": "ClientsForm.cs",
+              "ToolTip": "C:\\Users\\kus16\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\Institute\\\u0421\u0423\u0411\u0414\\\u041A\u0443\u0440\u0441\u0430\u0447\\Kursach\\ClientsForm.cs",
+              "RelativeToolTip": "ClientsForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-08T20:45:28.897Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Database.cs",
+              "DocumentMoniker": "C:\\Users\\kus16\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\Institute\\\u0421\u0423\u0411\u0414\\\u041A\u0443\u0440\u0441\u0430\u0447\\Kursach\\Database.cs",
+              "RelativeDocumentMoniker": "Database.cs",
+              "ToolTip": "C:\\Users\\kus16\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\Institute\\\u0421\u0423\u0411\u0414\\\u041A\u0443\u0440\u0441\u0430\u0447\\Kursach\\Database.cs",
+              "RelativeToolTip": "Database.cs",
+              "ViewState": "AgIAAG4AAAAAAAAAAAAIwIQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-08T20:39:01.582Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Client.cs",
+              "DocumentMoniker": "C:\\Users\\kus16\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\Institute\\\u0421\u0423\u0411\u0414\\\u041A\u0443\u0440\u0441\u0430\u0447\\Kursach\\Client.cs",
+              "RelativeDocumentMoniker": "Client.cs",
+              "ToolTip": "C:\\Users\\kus16\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\Institute\\\u0421\u0423\u0411\u0414\\\u041A\u0443\u0440\u0441\u0430\u0447\\Kursach\\Client.cs",
+              "RelativeToolTip": "Client.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAowBMAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-08T20:08:55.386Z",
+              "EditorCaption": ""
             }
           ]
         }

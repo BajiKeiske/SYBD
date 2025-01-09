@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Kursach
+namespace Music_store
 {
     public partial class EnsemblesForm : Form
     {
         public EnsemblesForm()
         {
             InitializeComponent();
+        }
+
+        private void EnsemblesForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

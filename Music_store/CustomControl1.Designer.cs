@@ -1,4 +1,4 @@
-﻿namespace Kursach
+﻿namespace Music_store
 {
     partial class CustomControl1
     {
