@@ -21,13 +21,10 @@ C:\Users\kus16\OneDrive\Рабочий стол\Institute\СУБД\Курсач\
 C:\Users\kus16\OneDrive\Рабочий стол\Institute\СУБД\Курсач\Kursach\obj\Debug\net9.0-windows\Music_store.EnsemblesForm.resources
 C:\Users\kus16\OneDrive\Рабочий стол\Institute\СУБД\Курсач\Kursach\obj\Debug\net9.0-windows\Music_store.MusiciansForm.resources
 C:\Users\kus16\OneDrive\Рабочий стол\Institute\СУБД\Курсач\Kursach\obj\Debug\net9.0-windows\Music_store.Properties.Resources.resources
-C:\Users\kus16\OneDrive\Рабочий стол\Institute\СУБД\Курсач\Kursach\obj\Debug\net9.0-windows\Music_store.RecordsForm.resources
 C:\Users\kus16\OneDrive\Рабочий стол\Institute\СУБД\Курсач\Kursach\obj\Debug\net9.0-windows\Music_store.dll
 C:\Users\kus16\OneDrive\Рабочий стол\Institute\СУБД\Курсач\Kursach\obj\Debug\net9.0-windows\refint\Music_store.dll
 C:\Users\kus16\OneDrive\Рабочий стол\Institute\СУБД\Курсач\Kursach\obj\Debug\net9.0-windows\Music_store.pdb
 C:\Users\kus16\OneDrive\Рабочий стол\Institute\СУБД\Курсач\Kursach\obj\Debug\net9.0-windows\ref\Music_store.dll
-C:\Users\kus16\OneDrive\Рабочий стол\Institute\СУБД\Курсач\Kursach\obj\Debug\net9.0-windows\Music_store.AddMusicianForm.resources
-C:\Users\kus16\OneDrive\Рабочий стол\Institute\СУБД\Курсач\Kursach\obj\Debug\net9.0-windows\Music_store.EditMusicianForm.resources
-C:\Users\kus16\OneDrive\Рабочий стол\Institute\СУБД\Курсач\Kursach\obj\Debug\net9.0-windows\Music_store.AddClientForm.resources
-C:\Users\kus16\OneDrive\Рабочий стол\Institute\СУБД\Курсач\Kursach\obj\Debug\net9.0-windows\Music_store.EditClientForm.resources
-C:\Users\kus16\OneDrive\Рабочий стол\Institute\СУБД\Курсач\Kursach\obj\Debug\net9.0-windows\Music_store.AddCompositionsForm.resources
+C:\Users\kus16\OneDrive\Рабочий стол\Institute\СУБД\Курсач\Kursach\obj\Debug\net9.0-windows\Music_store..resources
+C:\Users\kus16\OneDrive\Рабочий стол\Institute\СУБД\Курсач\Kursach\obj\Debug\net9.0-windows\Music_store.AddOrEditForm.resources
+C:\Users\kus16\OneDrive\Рабочий стол\Institute\СУБД\Курсач\Kursach\obj\Debug\net9.0-windows\Music_store.VinylRecordForm.resources

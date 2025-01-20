@@ -2,43 +2,28 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
-    <Compile Update="AddClientForm.cs">
+    <Compile Update="Forms\AddOrEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="AddCompositionsForm.cs">
+    <Compile Update="Forms\ClientsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="AddMusicianForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="ClientsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="CompositionsForm.cs">
+    <Compile Update="Forms\CompositionsForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="CustomControl1.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="EditClientForm.cs">
+    <Compile Update="Forms\EnsemblesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="EditCompositionForm.cs">
+    <Compile Update="Forms\Menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="EditMusicianForm.cs">
+    <Compile Update="Forms\MusiciansForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="EnsemblesForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Menu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="MusiciansForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="RecordsForm.cs">
+    <Compile Update="Forms\VinylRecordForm.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
