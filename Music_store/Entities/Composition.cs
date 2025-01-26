@@ -8,26 +8,25 @@ namespace Music_store.Entities
 {
     public class Composition
     {
-        public int id { get; set; }
-        public string name { get; set; }
-        public int musicianId { get; set; }
-        public int ensembleId { get; set; }
-        public DateTime releaseYear { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public int MusicianId { get; set; }
+        public int EnsembleId { get; set; }
+        public DateTime ReleaseYear { get; set; }
 
         public Composition() { }
 
         public Composition(int id, string name, int musicianId, int ensembleId, DateTime releaseYear)
         {
-            id = id;
-            name = name;
-            musicianId = musicianId;
-            ensembleId = ensembleId;
-            releaseYear = releaseYear;
+            this.Id = id;
+            this.Name = name;
+            this.MusicianId = musicianId;
+            this.EnsembleId = ensembleId;
+            this.ReleaseYear = releaseYear;
         }
-
         public override string ToString()
         {
-            return $"{id}: {name} (Музыкант ID: {musicianId}, Ансамбль ID: {ensembleId}, Год выпуска: {releaseYear:yyyy})";
+            return $"{Id}: {Name} (Музыкант ID: {MusicianId}, Ансамбль ID: {EnsembleId}, Год выпуска: {ReleaseYear:yyyy})";
         }
     }
 

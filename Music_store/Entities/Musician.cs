@@ -8,21 +8,21 @@ namespace Music_store.Entities
 {
     public class Musician
     {
-        public int id { get; set; }
-        public string name { get; set; }
-        public string surname { get; set; }
-        public string instrument { get; set; }
-        public DateTime date_of_birth { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Surname { get; set; }
+        public string Instrument { get; set; }
+        public DateTime Date_of_birth { get; set; }
 
         public Musician() { }
 
-        public Musician(int id, string name, string surname, string instrument, DateTime date_of_birth)
+        public Musician(int Id, string Name, string Surname, string Instrument, DateTime Date_of_birth)
         {
-            this.id = id;
-            this.name = name;
-            this.surname = surname;
-            this.instrument = instrument;
-            this.date_of_birth = date_of_birth;
+            this.Id = Id;
+            this.Name = Name;
+            this.Surname = Surname;
+            this.Instrument = Instrument;
+            this.Date_of_birth = Date_of_birth;
         }
     }
 

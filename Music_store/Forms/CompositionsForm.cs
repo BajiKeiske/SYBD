@@ -31,12 +31,12 @@ namespace Music_store
             compositionsDataGridView.DataSource = compositions;
             var columnHeaders = new Dictionary<string, string>
             {
-                { "id", "Индекс" },
-                { "name", "Имя" },
-                { "surname", "Фамилия" },
-                { "musicianId", "Индекс музыканта" },
-                { "ensembleId", "Индекс ансамбля" },
-                { "releaseYear", "Год выпуска" }
+                { "Id", "Индекс" },
+                { "Name", "Имя" },
+                { "Surname", "Фамилия" },
+                { "MusicianId", "Индекс музыканта" },
+                { "EnsembleId", "Индекс ансамбля" },
+                { "ReleaseYear", "Год выпуска" }
             };
             Menu.SetColumnHeaders(compositionsDataGridView, columnHeaders);
         }
@@ -79,13 +79,13 @@ namespace Music_store
                 // Получаем выбранную композицию
                 var selectedComposition = (Composition)compositionsDataGridView.SelectedRows[0].DataBoundItem;
 
-                var result = MessageBox.Show($"Вы уверены, что хотите удалить композицию {selectedComposition.name}?",
+                var result = MessageBox.Show($"Вы уверены, что хотите удалить композицию {selectedComposition.Name}?",
                     "Подтверждение", MessageBoxButtons.YesNo);
 
                 if (result == DialogResult.Yes)
                 {
                     // Удаление из базы данных
-                    Database.DeleteComposition(selectedComposition.id);
+                    Database.DeleteComposition(selectedComposition.Id);
 
                     // Перезагрузка списка
                     LoadCompositions();

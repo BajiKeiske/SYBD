@@ -37,7 +37,6 @@
             ClientSize = new System.Drawing.Size(843, 494);
             Name = "AddOrEditForm";
             Text = "AddOrEditForm";
-            Load += AddOrEditForm_Load;
             ResumeLayout(false);
         }
 

@@ -14,11 +14,12 @@ namespace Music_store.Entities
 
         public Ensemble() { }
 
-        public Ensemble(int id, string name, string description, DateTime date_founded)
+        public Ensemble(int id, string name, DateTime date_founded)
         {
-            Id = id;
-            Name = name;
-            Date_founded = date_founded;
+            this.Id = id;
+            this.Name = name;
+            this.Date_founded = date_founded;
         }
+
     }
 }

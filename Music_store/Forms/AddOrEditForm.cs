@@ -19,19 +19,41 @@ namespace Music_store
             _entityType = entityType;
             _entity = entity ?? Activator.CreateInstance(entityType); // Если объект не передан, создаём новый
 
-            Text = entity == null ? $"Добавить {_entityType.Name}" : $"Редактировать {_entityType.Name}";
+            // Словарь сопоставления названий сущностей с их переводами
+            var entityNamesInRussian = new Dictionary<string, string>
+            {
+                { "Vinyl", "пластинку" },
+                { "Musician", "исполнителя" },
+                { "Composition", "композицию" },
+                { "Ensemble", "ансамбль" },
+                { "Client", "клиента" }
+            };
 
-            GenerateFormFields(); // Динамическое создание полей ввода
+            // Получаем русское имя сущности или оставляем оригинальное, если перевода нет
+            var entityNameInRussian = entityNamesInRussian.ContainsKey(_entityType.Name)
+                ? entityNamesInRussian[_entityType.Name]
+                : _entityType.Name;
+
+            // Устанавливаем заголовок окна
+            Text = entity == null
+                ? $"Добавить {entityNameInRussian}"
+                : $"Редактировать {entityNameInRussian}";
+
+            GenerateFormFields();
         }
-
         // Генерация элементов управления на основе свойств сущности
         private void GenerateFormFields()
         {
             var properties = _entityType.GetProperties()
-                .Where(p => p.CanWrite && p.Name != "Id") // Сразу исключаем "Id"
+                .Where(p => p.CanWrite && p.Name != "Id") 
                 .ToList();
 
-            int yOffset = 10; // Начальный отступ сверху
+            int labelWidth = 120; 
+            int controlWidth = 200; 
+            int yOffset = 10; 
+            int xLabel = 10; 
+            int xControl = xLabel + labelWidth + 10; 
+
             foreach (var property in properties)
             {
                 // Создаём метку (Label) для каждого свойства
@@ -39,7 +61,8 @@ namespace Music_store
                 {
                     Text = GetFriendlyName(property.Name),
                     AutoSize = true,
-                    Location = new System.Drawing.Point(10, yOffset)
+                    Location = new System.Drawing.Point(xLabel, yOffset),
+                    Width = labelWidth
                 };
                 Controls.Add(label);
 
@@ -48,7 +71,8 @@ namespace Music_store
 
                 if (control != null)
                 {
-                    control.Location = new System.Drawing.Point(150, yOffset);
+                    control.Location = new System.Drawing.Point(xControl, yOffset);
+                    control.Width = controlWidth;
                     _controls[property.Name] = control; // Привязываем свойство к элементу управления
                     Controls.Add(control);
 
@@ -65,7 +89,7 @@ namespace Music_store
             {
                 Text = "Сохранить",
                 Width = 100,
-                Location = new System.Drawing.Point(10, yOffset)
+                Location = new System.Drawing.Point(xLabel, yOffset + 10)
             };
             saveButton.Click += SaveButton_Click;
             Controls.Add(saveButton);
@@ -75,14 +99,14 @@ namespace Music_store
             {
                 Text = "Отмена",
                 Width = 100,
-                Location = new System.Drawing.Point(120, yOffset)
+                Location = new System.Drawing.Point(xControl, yOffset + 10)
             };
             cancelButton.Click += (sender, args) => DialogResult = DialogResult.Cancel;
             Controls.Add(cancelButton);
 
             AutoSize = true; // Подгоняем размер формы под содержимое
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
         }
-
 
         // Создаёт элемент управления на основе типа свойства
         private Control CreateControlForProperty(PropertyInfo property)
@@ -95,33 +119,9 @@ namespace Music_store
                 return new DateTimePicker { Width = 200 };
             if (property.Name.EndsWith("Id")) // Обработка внешних ключей
                 return CreateComboBoxForForeignKey(property.Name);
-            return null; // Если тип свойства не поддерживается, пропускаем его
+            return null;
         }
 
-        // Заполняет ComboBox для Id свободными значениями
-        private void FillAvailableIds(ComboBox comboBox)
-        {
-            try
-            {
-                // Получаем список свободных идентификаторов из базы данных
-                var availableIds = Database.GetAvailableIdsForEntity(_entityType.Name);
-
-                if (availableIds.Any())
-                {
-                    comboBox.DataSource = availableIds;
-                }
-                else
-                {
-                    comboBox.Items.Add("Нет доступных Id");
-                    comboBox.SelectedIndex = 0;
-                    comboBox.Enabled = false;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Ошибка при загрузке доступных Id: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
         // Создаёт ComboBox для внешнего ключа
         private ComboBox CreateComboBoxForForeignKey(string propertyName)
         {
@@ -183,7 +183,7 @@ namespace Music_store
             {
                 if (dateValue < dateTimePicker.MinDate || dateValue > dateTimePicker.MaxDate)
                 {
-                    dateTimePicker.Value = DateTime.Now; // Устанавливаем текущую дату, если значение недопустимо
+                    dateTimePicker.Value = DateTime.Now;
                 }
                 else
                 {
@@ -230,18 +230,55 @@ namespace Music_store
         {
             return _entity;
         }
-        // Преобразует имя свойства в человеко-читаемый формат
         private string GetFriendlyName(string propertyName)
         {
-            return propertyName switch
+            // Сначала пробуем использовать switch
+            var friendlyName = propertyName switch
             {
                 "MusicianId" => "Музыкант",
                 "EnsembleId" => "Ансамбль",
                 "CompositionId" => "Композиция",
                 "ClientId" => "Клиент",
-                _ => propertyName
+                "VinylId" => "Пластинка",
+                _ => null // Если нет соответствия, возвращаем null
             };
+
+            // Если в switch нет соответствия, пробуем найти в словаре
+            if (friendlyName == null)
+            {
+                // Словарь для перевода свойств на русский язык
+                var fieldNamesInRussian = new Dictionary<string, string>
+        {
+            { "Name", "Имя" },
+            { "Id", "Индекс" },
+            { "Surname", "Фамилия" },
+            { "Instrument", "Инструмент" },
+            { "Date_of_birth", "Дата рождения" },
+            { "ReleaseYear", "Год выпуска" },
+            { "Birthday", "Дата рождения" },
+            { "Phone_number", "Телефонный номер" },
+            { "Email", "Почта" },
+            { "LabelNumber", "Номер наклейки" },
+            { "Title", "Название" },
+            { "Genre", "Жанр" },
+            { "WholesalePrice", "Оптовая цена" },
+            { "RetailPrice", "Розничная цена" },
+            { "SoldLastYear", "Продано в прошлом году" },
+            { "SoldThisYear", "Продано в текущем году" },
+            { "Stock", "Остаток" },
+            { "Date_founded", "Дата основания" },
+
+        };
+
+                // Если свойство есть в словаре, возвращаем русское название, иначе возвращаем оригинальное имя
+                friendlyName = fieldNamesInRussian.ContainsKey(propertyName)
+                    ? fieldNamesInRussian[propertyName]
+                    : propertyName;
+            }
+
+            return friendlyName;
         }
+
         private void AddOrEditForm_Load(object sender, EventArgs e)
         {
         }

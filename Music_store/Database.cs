@@ -56,13 +56,13 @@ namespace Music_store
             return result;
         }
         public static readonly Dictionary<string, string> ClassToTableMap = new()
-    {
-        { "EnsembleForm", "ensembles_catalog" },
-        { "Musician", "musiciansDataGridView" },
-        { "Composition", "compositionsDataGridView" },
-        { "Client", "clientsDataGridView" },
-        { "Vinyl", "dgvVinyls" }
-    };
+        {
+            { "Ensembles", "ensembles_catalog" },
+            { "Musicians", "musicians_catalog" },
+            { "Compositions", "compositions_catalog" },
+            { "Clients", "clients_catalog" },
+            { "Vinyls", "vinyl_record" }
+        };
 
         public static string GetTableName(string className)
         {
@@ -86,7 +86,7 @@ namespace Music_store
                 string tableName = GetTableName(className);
 
                 // SQL-запрос для получения максимального значения Id
-                string query = $"SELECT COALESCE(MAX(\"Id\"), 0) FROM \"{tableName}\"";
+                string query = $"SELECT COALESCE(MAX(\"id\"), 0) FROM \"{tableName}\"";
                 using (var command = new NpgsqlCommand(query, connection))
                 {
                     return Convert.ToInt32(command.ExecuteScalar()) + 1;
@@ -112,11 +112,11 @@ namespace Music_store
                 "INSERT INTO musicians_catalog (id, name, surname, instrument, date_of_birth) VALUES (@id, @name, @surname, @instrument, @date_of_birth)",
                 command =>
                 {
-                    command.Parameters.AddWithValue("@id", musician.id);
-                    command.Parameters.AddWithValue("@name", musician.name);
-                    command.Parameters.AddWithValue("@surname", musician.surname);
-                    command.Parameters.AddWithValue("@instrument", musician.instrument);
-                    command.Parameters.AddWithValue("@date_of_birth", musician.date_of_birth);
+                    command.Parameters.AddWithValue("@id", musician.Id);
+                    command.Parameters.AddWithValue("@name", musician.Name);
+                    command.Parameters.AddWithValue("@surname", musician.Surname);
+                    command.Parameters.AddWithValue("@instrument", musician.Instrument);
+                    command.Parameters.AddWithValue("@date_of_birth", musician.Date_of_birth);
                 }
             );
         }
@@ -127,11 +127,11 @@ namespace Music_store
                 "UPDATE musicians_catalog SET name = @name, surname = @surname, instrument = @instrument, date_of_birth = @date_of_birth WHERE id = @id",
                 command =>
                 {
-                    command.Parameters.AddWithValue("@id", musician.id);
-                    command.Parameters.AddWithValue("@name", musician.name);
-                    command.Parameters.AddWithValue("@surname", musician.surname);
-                    command.Parameters.AddWithValue("@instrument", musician.instrument);
-                    command.Parameters.AddWithValue("@date_of_birth", musician.date_of_birth);
+                    command.Parameters.AddWithValue("@id", musician.Id);
+                    command.Parameters.AddWithValue("@name", musician.Name);
+                    command.Parameters.AddWithValue("@surname", musician.Surname);
+                    command.Parameters.AddWithValue("@instrument", musician.Instrument);
+                    command.Parameters.AddWithValue("@date_of_birth", musician.Date_of_birth);
                 }
             );
         }
@@ -227,10 +227,10 @@ namespace Music_store
                 "INSERT INTO compositions_catalog (name, musician_id, ensemble_id, release_year) VALUES (@name, @musician_id, @ensemble_id, @release_year)",
                 command =>
                 {
-                    command.Parameters.AddWithValue("@name", composition.name);
-                    command.Parameters.AddWithValue("@musician_id", composition.musicianId);
-                    command.Parameters.AddWithValue("@ensemble_id", composition.ensembleId);
-                    command.Parameters.AddWithValue("@release_year", composition.releaseYear);
+                    command.Parameters.AddWithValue("@name", composition.Name);
+                    command.Parameters.AddWithValue("@musician_id", composition.MusicianId);
+                    command.Parameters.AddWithValue("@ensemble_id", composition.EnsembleId);
+                    command.Parameters.AddWithValue("@release_year", composition.ReleaseYear);
                 }
             );
         }
@@ -241,11 +241,11 @@ namespace Music_store
                 "UPDATE compositions_catalog SET name = @name, musician_id = @musician_id, ensemble_id = @ensemble_id, release_year = @release_year WHERE id = @id",
                 command =>
                 {
-                    command.Parameters.AddWithValue("@id", composition.id);
-                    command.Parameters.AddWithValue("@name", composition.name);
-                    command.Parameters.AddWithValue("@musician_id", composition.musicianId);
-                    command.Parameters.AddWithValue("@ensemble_id", composition.ensembleId);
-                    command.Parameters.AddWithValue("@release_year", composition.releaseYear);
+                    command.Parameters.AddWithValue("@id", composition.Id);
+                    command.Parameters.AddWithValue("@name", composition.Name);
+                    command.Parameters.AddWithValue("@musician_id", composition.MusicianId);
+                    command.Parameters.AddWithValue("@ensemble_id", composition.EnsembleId);
+                    command.Parameters.AddWithValue("@release_year", composition.ReleaseYear);
                 }
             );
         }
@@ -315,30 +315,40 @@ namespace Music_store
                 }
             }
         }
+        // Получает список доступных идентификаторов (Id), которые отсутствуют в таблице базы данных указанной сущности.
         public static List<int> GetAvailableIdsForEntity(string entityName)
-        {
-            using var connection = new NpgsqlConnection("ваша строка подключения");
-            connection.Open();
-
-            var query = $@"
-            SELECT generate_series(1, MAX(Id)) AS possible_id
-            FROM {entityName}
-            EXCEPT
-            SELECT Id FROM {entityName};
-            ";
-
-            using var command = new NpgsqlCommand(query, connection);
-            using var reader = command.ExecuteReader();
-
-            var availableIds = new List<int>();
-            while (reader.Read())
+{
+            try
             {
-                availableIds.Add(reader.GetInt32(0));
+                using (var connection = new NpgsqlConnection(ConnectionString))
+                {
+                    connection.Open();
+
+                    var query = $@"
+                    SELECT generate_series(1, MAX(Id)) AS possible_id
+                    FROM {entityName}
+                    EXCEPT
+                    SELECT Id FROM {entityName};
+                    ";
+
+                    using (var command = new NpgsqlCommand(query, connection))
+                    using (var reader = command.ExecuteReader())
+                    {
+                        var availableIds = new List<int>();
+                        while (reader.Read())
+                        {
+                            availableIds.Add(reader.GetInt32(0));
+                        }
+                        return availableIds;
+                    }
+                }
             }
-
-            return availableIds;
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка выполнения запроса: {ex.Message}");
+                return new List<int>(); // Возвращаем пустой список в случае ошибки
+            }
         }
-
         public static void UpdateEnsemble(Ensemble ensemble)
         {
             ExecuteNonQuery(
@@ -407,14 +417,18 @@ namespace Music_store
                         vinyls.Add(new Vinyl
                         {
                             Id = reader.GetInt32(reader.GetOrdinal("Id")),
-                            StickerNumber = reader.GetString(reader.GetOrdinal("StickerNumber")),
+                            LabelNumber = reader.GetString(reader.GetOrdinal("label_number")),
                             Title = reader.GetString(reader.GetOrdinal("Title")),
-                            ReleaseDate = reader.GetDateTime(reader.GetOrdinal("ReleaseDate")),
-                            WholesalePrice = reader.GetDecimal(reader.GetOrdinal("WholesalePrice")),
-                            RetailPrice = reader.GetDecimal(reader.GetOrdinal("RetailPrice")),
-                            SoldLastYear = reader.GetInt32(reader.GetOrdinal("SoldLastYear")),
-                            SoldThisYear = reader.GetInt32(reader.GetOrdinal("SoldThisYear")),
-                            Stock = reader.GetInt32(reader.GetOrdinal("Stock"))
+                            ReleaseYear = reader.GetInt32(reader.GetOrdinal("Release_year")),
+                            MusicianId = reader.GetInt32(reader.GetOrdinal("Musician_id")),
+                            EnsembleId = reader.GetInt32(reader.GetOrdinal("Ensemble_id")),
+                            Genre = reader.GetString(reader.GetOrdinal("Genre")),
+                            WholesalePrice = reader.GetDecimal(reader.GetOrdinal("Wholesale_price")),
+                            RetailPrice = reader.GetDecimal(reader.GetOrdinal("Retail_price")),
+                            SoldLastYear = reader.GetInt32(reader.GetOrdinal("Sold_last_year")),
+                            SoldThisYear = reader.GetInt32(reader.GetOrdinal("Sold_this_year")),
+                            Stock = reader.GetInt32(reader.GetOrdinal("Stock")),
+                            Image = reader["image"] as byte[] // Проверяем значение на null
                         });
                     }
                 }
@@ -422,72 +436,81 @@ namespace Music_store
             return vinyls;
         }
 
-        // Добавление новой пластинки
         public static void AddVinyl(Vinyl vinyl)
         {
             using (var connection = new NpgsqlConnection(ConnectionString))
             {
                 connection.Open();
                 var query = @"
-                INSERT INTO vinyl_records 
-                (StickerNumber, Title, ReleaseDate, WholesalePrice, RetailPrice, SoldLastYear, SoldThisYear, Stock)
-                VALUES 
-                (@StickerNumber, @Title, @ReleaseDate, @WholesalePrice, @RetailPrice, @SoldLastYear, @SoldThisYear, @Stock)";
+            INSERT INTO vinyl_records 
+            (label_number, title, release_year, musician_id, ensemble_id, genre, wholesale_price, retail_price, sold_last_year, sold_this_year, stock, image)
+            VALUES 
+            (@LabelNumber, @Title, @ReleaseYear, @MusicianId, @EnsembleId, @Genre, @WholesalePrice, @RetailPrice, @SoldLastYear, @SoldThisYear, @Stock, @Image)";
                 using (var command = new NpgsqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@StickerNumber", vinyl.StickerNumber);
+                    command.Parameters.AddWithValue("@LabelNumber", vinyl.LabelNumber);
                     command.Parameters.AddWithValue("@Title", vinyl.Title);
-                    command.Parameters.AddWithValue("@ReleaseDate", vinyl.ReleaseDate);
+                    command.Parameters.AddWithValue("@ReleaseYear", vinyl.ReleaseYear);
+                    command.Parameters.AddWithValue("@MusicianId", vinyl.MusicianId);
+                    command.Parameters.AddWithValue("@EnsembleId", vinyl.EnsembleId);
+                    command.Parameters.AddWithValue("@Genre", vinyl.Genre);
                     command.Parameters.AddWithValue("@WholesalePrice", vinyl.WholesalePrice);
                     command.Parameters.AddWithValue("@RetailPrice", vinyl.RetailPrice);
                     command.Parameters.AddWithValue("@SoldLastYear", vinyl.SoldLastYear);
                     command.Parameters.AddWithValue("@SoldThisYear", vinyl.SoldThisYear);
                     command.Parameters.AddWithValue("@Stock", vinyl.Stock);
+                    command.Parameters.AddWithValue("@Image", (object)vinyl.Image ?? DBNull.Value); // Учитываем возможное отсутствие изображения
                     command.ExecuteNonQuery();
                 }
             }
         }
 
-        // Обновление данных пластинки
         public static void UpdateVinyl(Vinyl vinyl)
         {
             using (var connection = new NpgsqlConnection(ConnectionString))
             {
                 connection.Open();
                 var query = @"
-                UPDATE vinyl_records
-                SET StickerNumber = @StickerNumber, 
-                    Title = @Title, 
-                    ReleaseDate = @ReleaseDate, 
-                    WholesalePrice = @WholesalePrice, 
-                    RetailPrice = @RetailPrice, 
-                    SoldLastYear = @SoldLastYear, 
-                    SoldThisYear = @SoldThisYear, 
-                    Stock = @Stock
-                WHERE Id = @Id";
+            UPDATE vinyl_records
+            SET label_number = @LabelNumber,
+                title = @Title,
+                release_year = @ReleaseYear,
+                musician_id = @MusicianId,
+                ensemble_id = @EnsembleId,
+                genre = @Genre,
+                wholesale_price = @WholesalePrice,
+                retail_price = @RetailPrice,
+                sold_last_year = @SoldLastYear,
+                sold_this_year = @SoldThisYear,
+                stock = @Stock,
+                image = @Image
+            WHERE id = @Id";
                 using (var command = new NpgsqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@Id", vinyl.Id);
-                    command.Parameters.AddWithValue("@StickerNumber", vinyl.StickerNumber);
+                    command.Parameters.AddWithValue("@LabelNumber", vinyl.LabelNumber);
                     command.Parameters.AddWithValue("@Title", vinyl.Title);
-                    command.Parameters.AddWithValue("@ReleaseDate", vinyl.ReleaseDate);
+                    command.Parameters.AddWithValue("@ReleaseYear", vinyl.ReleaseYear);
+                    command.Parameters.AddWithValue("@MusicianId", vinyl.MusicianId);
+                    command.Parameters.AddWithValue("@EnsembleId", vinyl.EnsembleId);
+                    command.Parameters.AddWithValue("@Genre", vinyl.Genre);
                     command.Parameters.AddWithValue("@WholesalePrice", vinyl.WholesalePrice);
                     command.Parameters.AddWithValue("@RetailPrice", vinyl.RetailPrice);
                     command.Parameters.AddWithValue("@SoldLastYear", vinyl.SoldLastYear);
                     command.Parameters.AddWithValue("@SoldThisYear", vinyl.SoldThisYear);
                     command.Parameters.AddWithValue("@Stock", vinyl.Stock);
+                    command.Parameters.AddWithValue("@Image", (object)vinyl.Image ?? DBNull.Value);
                     command.ExecuteNonQuery();
                 }
             }
         }
 
-        // Удаление пластинки
         public static void DeleteVinyl(int id)
         {
             using (var connection = new NpgsqlConnection(ConnectionString))
             {
                 connection.Open();
-                var query = "DELETE FROM vinyl_records WHERE Id = @Id";
+                var query = "DELETE FROM vinyl_records WHERE id = @Id";
                 using (var command = new NpgsqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@Id", id);
@@ -495,7 +518,6 @@ namespace Music_store
                 }
             }
         }
-
         //Сохранение изменений списка пластинок
         public static void SaveVinyls(List<Vinyl> vinyls)
         {
@@ -506,6 +528,7 @@ namespace Music_store
                 else
                     UpdateVinyl(vinyl);
             }
+
         }
     }
 }

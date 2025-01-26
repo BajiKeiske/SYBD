@@ -1,5 +1,6 @@
 ﻿using Music_store.Entities;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Music_store
@@ -16,6 +17,14 @@ namespace Music_store
         {
             var ensembles = Database.GetEnsembles(); // Загрузка ансамблей из базы данных
             ensemblesDataGridView.DataSource = ensembles;
+
+            var columnHeaders = new Dictionary<string, string>
+            {
+                { "Id", "Индекс" },
+                { "Name", "Название" },
+                { "Date_founded", "Дата создания" }
+            };
+            Menu.SetColumnHeaders(ensemblesDataGridView, columnHeaders);
         }
 
         private void AddEnsemble_Click(object sender, EventArgs e)

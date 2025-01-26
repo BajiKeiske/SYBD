@@ -27,11 +27,11 @@ namespace Music_store
 
             var columnHeaders = new Dictionary<string, string>
             {
-                { "id", "Индекс" },
-                { "name", "Имя" },
-                { "surname", "Фамилия" },
-                { "instrument", "Инструмент" },
-                { "date_of_birth", "Дата рождения" }
+                { "Id", "Индекс" },
+                { "Name", "Имя" },
+                { "Surname", "Фамилия" },
+                { "Instrument", "Инструмент" },
+                { "Date_of_birth", "Дата рождения" }
             };
             Menu.SetColumnHeaders(musiciansDataGridView, columnHeaders);
         }
@@ -73,12 +73,12 @@ namespace Music_store
             {
                 var selectedMusician = (Musician)musiciansDataGridView.SelectedRows[0].DataBoundItem;
 
-                var result = MessageBox.Show($"Вы уверены, что хотите удалить музыканта {selectedMusician.name} {selectedMusician.surname}?",
+                var result = MessageBox.Show($"Вы уверены, что хотите удалить музыканта {selectedMusician.Name} {selectedMusician.Surname}?",
                                              "Подтверждение удаления", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (result == DialogResult.Yes)
                 {
-                    Database.DeleteMusician(selectedMusician.id);
+                    Database.DeleteMusician(selectedMusician.Id);
                     LoadMusicians();
                 }
             }
@@ -97,7 +97,7 @@ namespace Music_store
         //    }
 
         //    var selectedMusician = (Musician)musiciansDataGridView.SelectedRows[0].DataBoundItem;
-        //    var ensemblesForm = new EnsemblesForm(selectedMusician.id);
+        //    var ensemblesForm = new EnsemblesForm(selectedMusician.Id);
         //    ensemblesForm.ShowDialog();
         //}
     }
