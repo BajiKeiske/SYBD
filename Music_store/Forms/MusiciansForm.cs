@@ -80,6 +80,7 @@ namespace Music_store
                 {
                     Database.DeleteMusician(selectedMusician.Id);
                     LoadMusicians();
+                    MessageBox.Show("Музыкант удален.", "Удаление", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else
@@ -87,19 +88,6 @@ namespace Music_store
                 MessageBox.Show("Выберите музыканта для удаления.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
-        //private void EnsemblesButton_Click(object sender, EventArgs e)
-        //{
-        //    if (musiciansDataGridView.SelectedRows.Count == 0)
-        //    {
-        //        MessageBox.Show("Пожалуйста, выберите музыканта.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        //        return;
-        //    }
-
-        //    var selectedMusician = (Musician)musiciansDataGridView.SelectedRows[0].DataBoundItem;
-        //    var ensemblesForm = new EnsemblesForm(selectedMusician.Id);
-        //    ensemblesForm.ShowDialog();
-        //}
     }
 }
 

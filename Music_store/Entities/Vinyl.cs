@@ -21,6 +21,32 @@ namespace Music_store.Entities
         public int SoldThisYear { get; set; }
         public int Stock { get; set; }
         public byte[] Image { get; set; }
-    }
 
+        public Vinyl(int id, string labelNumber, string title, int releaseYear, int musicianId, int ensembleId, string genre, decimal wholesalePrice, decimal retailPrice, int soldLastYear, int soldThisYear, int stock, byte[] image)
+        {
+            Id = id;
+            LabelNumber = labelNumber;
+            Title = title;
+            ReleaseYear = releaseYear;
+            MusicianId = musicianId;
+            EnsembleId = ensembleId;
+            Genre = genre;
+            WholesalePrice = wholesalePrice;
+            RetailPrice = retailPrice;
+            SoldLastYear = soldLastYear;
+            SoldThisYear = soldThisYear;
+            Stock = stock;
+            Image = image;
+        }
+        public Vinyl(int id, string title)
+        {
+            this.Id = id;
+            this.Title = title;
+        }
+        public override string ToString()
+        {
+            return $"{Id}: {Title} ({ReleaseYear}, Жанр: {Genre}, Цена: {RetailPrice:C})";
+        }
+        public Vinyl() { }
+    }
 }

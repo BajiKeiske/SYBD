@@ -45,14 +45,14 @@ namespace Music_store
         private void GenerateFormFields()
         {
             var properties = _entityType.GetProperties()
-                .Where(p => p.CanWrite && p.Name != "Id") 
+                .Where(p => p.CanWrite && p.Name != "Id")
                 .ToList();
 
-            int labelWidth = 120; 
-            int controlWidth = 200; 
-            int yOffset = 10; 
-            int xLabel = 10; 
-            int xControl = xLabel + labelWidth + 10; 
+            int labelWidth = 120;
+            int controlWidth = 200;
+            int yOffset = 10;
+            int xLabel = 10;
+            int xControl = xLabel + labelWidth + 10;
 
             foreach (var property in properties)
             {

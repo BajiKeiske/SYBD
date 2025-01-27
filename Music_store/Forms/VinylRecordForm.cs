@@ -33,7 +33,7 @@ namespace Music_store
             {
                 Dock = DockStyle.Top,
                 AutoSize = true,
-                Padding = new Padding(10),
+                Padding = new Padding(-10),
                 FlowDirection = FlowDirection.LeftToRight,
                 WrapContents = true
             };
@@ -51,17 +51,10 @@ namespace Music_store
                 ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize,
                 ColumnHeadersVisible = true,
                 ColumnHeadersHeight = 30,
+                Dock = DockStyle.Fill
             };
 
-            // Устанавливка местоположения и размера
-            dgvVinyls.Location = new Point(0, 20); 
-            dgvVinyls.Size = new Size(this.ClientSize.Width, this.ClientSize.Height - 150); 
-
             this.Controls.Add(dgvVinyls);
-
-
-            // Настройка автоматического изменения ширины столбцов
-            dgvVinyls.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
 
             // Кнопки управления
             var buttonPanel = new FlowLayoutPanel
@@ -90,6 +83,27 @@ namespace Music_store
             buttonPanel.Controls.Add(btnSave);
         }
 
+        private void LoadVinyls()
+        {
+            // Загружаем данные из базы
+            var vinyls = Database.GetVinyls();
+            dgvVinyls.DataSource = vinyls;
+
+            // Генерация столбцов таблицы
+            dgvVinyls.Columns.Clear();
+            dgvVinyls.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Id", HeaderText = "ID", Visible = false });
+            dgvVinyls.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "LabelNumber", HeaderText = "Номер этикетки" });
+            dgvVinyls.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Title", HeaderText = "Название" });
+            dgvVinyls.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "ReleaseYear", HeaderText = "Год выпуска" });
+            dgvVinyls.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "MusicianId", HeaderText = "ID музыканта" });
+            dgvVinyls.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "EnsembleId", HeaderText = "ID ансамбля" });
+            dgvVinyls.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Genre", HeaderText = "Жанр" });
+            dgvVinyls.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "WholesalePrice", HeaderText = "Оптовая цена" });
+            dgvVinyls.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "RetailPrice", HeaderText = "Розничная цена" });
+            dgvVinyls.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "SoldLastYear", HeaderText = "Продано в прошлом году" });
+            dgvVinyls.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "SoldThisYear", HeaderText = "Продано в этом году" });
+            dgvVinyls.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Stock", HeaderText = "Остаток" });
+        }
         private void ShowEditForm(Vinyl vinyl)
         {
             // Создаём форму с фиксированным размером
@@ -125,7 +139,7 @@ namespace Music_store
                 {
                     Text = property.Name,
                     AutoSize = true,
-                    Width = 360 
+                    Width = 360
                 };
 
                 Control control = null;
@@ -221,29 +235,6 @@ namespace Music_store
             form.ShowDialog();
         }
 
-        private void LoadVinyls()
-        {
-            // Загружаем данные из базы
-            var vinyls = Database.GetVinyls();
-            dgvVinyls.DataSource = vinyls;
-
-            // Генерация столбцов таблицы
-            dgvVinyls.Columns.Clear();
-            dgvVinyls.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Id", HeaderText = "ID", Visible = false });
-            dgvVinyls.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "LabelNumber", HeaderText = "Номер этикетки" });
-            dgvVinyls.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Title", HeaderText = "Название" });
-            dgvVinyls.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "ReleaseYear", HeaderText = "Год выпуска" });
-            dgvVinyls.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "MusicianId", HeaderText = "Музыкант ID" });
-            dgvVinyls.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "EnsembleId", HeaderText = "Ансамбль ID" });
-            dgvVinyls.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Genre", HeaderText = "Жанр" });
-            dgvVinyls.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "WholesalePrice", HeaderText = "Оптовая цена" });
-            dgvVinyls.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "RetailPrice", HeaderText = "Розничная цена" });
-            dgvVinyls.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "ReleaseDate", HeaderText = "Дата выпуска" });
-            dgvVinyls.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "SoldLastYear", HeaderText = "Продано в прошлом году" });
-            dgvVinyls.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "SoldThisYear", HeaderText = "Продано в этом году" });
-            dgvVinyls.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Stock", HeaderText = "Остаток" });
-        }
-
         private void BtnAdd_Click(object sender, EventArgs e)
         {
             ShowEditForm(null);
@@ -254,7 +245,14 @@ namespace Music_store
             if (dgvVinyls.SelectedRows.Count > 0)
             {
                 var selectedVinyl = dgvVinyls.SelectedRows[0].DataBoundItem as Vinyl;
-                ShowEditForm(selectedVinyl);
+                if (selectedVinyl != null)
+                {
+                    ShowEditForm(selectedVinyl);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Выберите пластинку для редактирования.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -263,16 +261,30 @@ namespace Music_store
             if (dgvVinyls.SelectedRows.Count > 0)
             {
                 var selectedVinyl = dgvVinyls.SelectedRows[0].DataBoundItem as Vinyl;
-                Database.DeleteVinyl(selectedVinyl.Id);
-                LoadVinyls();
+                if (selectedVinyl != null)
+                {
+                    var result = MessageBox.Show($"Вы уверены, что хотите удалить пластинку \"{selectedVinyl.Title}\"?",
+                                                  "Подтверждение удаления", MessageBoxButtons.YesNo);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        Database.DeleteVinyl(selectedVinyl.Id);
+                        LoadVinyls();
+                        MessageBox.Show("Пластинка удалена.", "Удаление", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Выберите пластинку для удаления.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            Database.SaveVinyls((List<Vinyl>)dgvVinyls.DataSource);
-            MessageBox.Show("Изменения сохранены.");
+            MessageBox.Show("Все изменения сохранены.", "Сохранение", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
+
 }
 

@@ -28,54 +28,59 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             deleteMusician = new System.Windows.Forms.Button();
             EditMusician = new System.Windows.Forms.Button();
             AddMusician = new System.Windows.Forms.Button();
             musiciansDataGridView = new System.Windows.Forms.DataGridView();
-            EnsemblesButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)musiciansDataGridView).BeginInit();
             SuspendLayout();
             // 
             // deleteMusician
             // 
-            deleteMusician.Location = new System.Drawing.Point(278, 355);
+            deleteMusician.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            deleteMusician.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            deleteMusician.Location = new System.Drawing.Point(322, 355);
             deleteMusician.Name = "deleteMusician";
-            deleteMusician.Size = new System.Drawing.Size(94, 29);
+            deleteMusician.Size = new System.Drawing.Size(149, 38);
             deleteMusician.TabIndex = 0;
-            deleteMusician.Text = "Удалить музыканта";
-            deleteMusician.UseVisualStyleBackColor = true;
+            deleteMusician.Text = "Удалить";
+            deleteMusician.UseVisualStyleBackColor = false;
             deleteMusician.Click += deleteMusicianButton_Click;
             // 
             // EditMusician
             // 
-            EditMusician.Location = new System.Drawing.Point(23, 346);
+            EditMusician.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            EditMusician.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            EditMusician.Location = new System.Drawing.Point(167, 355);
             EditMusician.Name = "EditMusician";
             EditMusician.Size = new System.Drawing.Size(149, 38);
             EditMusician.TabIndex = 1;
             EditMusician.Text = "Редактировать";
-            EditMusician.UseVisualStyleBackColor = true;
+            EditMusician.UseVisualStyleBackColor = false;
             EditMusician.Click += EditMusician_Click;
             // 
             // AddMusician
             // 
-            AddMusician.Location = new System.Drawing.Point(178, 355);
+            AddMusician.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            AddMusician.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            AddMusician.Location = new System.Drawing.Point(12, 355);
             AddMusician.Name = "AddMusician";
-            AddMusician.Size = new System.Drawing.Size(94, 29);
+            AddMusician.Size = new System.Drawing.Size(149, 38);
             AddMusician.TabIndex = 2;
             AddMusician.Text = "добавить";
-            AddMusician.UseVisualStyleBackColor = true;
+            AddMusician.UseVisualStyleBackColor = false;
             AddMusician.Click += AddMusician_Click;
             // 
             // musiciansDataGridView
             // 
             musiciansDataGridView.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(192, 255, 255);
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            musiciansDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(192, 255, 255);
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            musiciansDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             musiciansDataGridView.BackgroundColor = System.Drawing.Color.LightBlue;
             musiciansDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             musiciansDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -87,22 +92,12 @@
             musiciansDataGridView.Size = new System.Drawing.Size(776, 301);
             musiciansDataGridView.TabIndex = 3;
             // 
-            // EnsemblesButton
-            // 
-            EnsemblesButton.Location = new System.Drawing.Point(417, 355);
-            EnsemblesButton.Name = "EnsemblesButton";
-            EnsemblesButton.Size = new System.Drawing.Size(94, 29);
-            EnsemblesButton.TabIndex = 4;
-            EnsemblesButton.Text = "Ансамбли";
-            EnsemblesButton.UseVisualStyleBackColor = true;
-            // 
             // MusiciansForm
             // 
             AccessibleRole = System.Windows.Forms.AccessibleRole.MenuPopup;
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(800, 450);
-            Controls.Add(EnsemblesButton);
             Controls.Add(musiciansDataGridView);
             Controls.Add(AddMusician);
             Controls.Add(EditMusician);
@@ -120,6 +115,5 @@
         private System.Windows.Forms.Button EditMusician;
         private System.Windows.Forms.Button AddMusician;
         private System.Windows.Forms.DataGridView musiciansDataGridView;
-        private System.Windows.Forms.Button EnsemblesButton;
     }
 }

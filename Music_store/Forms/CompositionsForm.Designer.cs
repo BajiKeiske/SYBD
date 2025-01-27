@@ -37,41 +37,49 @@
             // 
             // EditComposition
             // 
-            EditComposition.Location = new System.Drawing.Point(27, 392);
+            EditComposition.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            EditComposition.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            EditComposition.Location = new System.Drawing.Point(167, 350);
             EditComposition.Name = "EditComposition";
-            EditComposition.Size = new System.Drawing.Size(94, 29);
+            EditComposition.Size = new System.Drawing.Size(149, 38);
             EditComposition.TabIndex = 0;
             EditComposition.Text = "Редактировать";
-            EditComposition.UseVisualStyleBackColor = true;
+            EditComposition.UseVisualStyleBackColor = false;
             EditComposition.Click += EditComposition_Click;
             // 
             // AddComposition
             // 
-            AddComposition.Location = new System.Drawing.Point(148, 392);
+            AddComposition.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            AddComposition.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            AddComposition.Location = new System.Drawing.Point(12, 350);
             AddComposition.Name = "AddComposition";
-            AddComposition.Size = new System.Drawing.Size(94, 29);
+            AddComposition.Size = new System.Drawing.Size(149, 38);
             AddComposition.TabIndex = 1;
             AddComposition.Text = "Добавить";
-            AddComposition.UseVisualStyleBackColor = true;
+            AddComposition.UseVisualStyleBackColor = false;
             AddComposition.Click += AddComposition_Click;
             // 
             // deleteCompositions
             // 
-            deleteCompositions.Location = new System.Drawing.Point(268, 392);
+            deleteCompositions.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            deleteCompositions.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            deleteCompositions.Location = new System.Drawing.Point(322, 350);
             deleteCompositions.Name = "deleteCompositions";
-            deleteCompositions.Size = new System.Drawing.Size(94, 29);
+            deleteCompositions.Size = new System.Drawing.Size(149, 38);
             deleteCompositions.TabIndex = 2;
             deleteCompositions.Text = "Удалить";
-            deleteCompositions.UseVisualStyleBackColor = true;
+            deleteCompositions.UseVisualStyleBackColor = false;
             deleteCompositions.Click += deleteCompositions_Click;
             // 
             // compositionsDataGridView
             // 
+            compositionsDataGridView.BackgroundColor = System.Drawing.Color.LightBlue;
             compositionsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             compositionsDataGridView.Location = new System.Drawing.Point(12, 12);
             compositionsDataGridView.Name = "compositionsDataGridView";
+            compositionsDataGridView.ReadOnly = true;
             compositionsDataGridView.RowHeadersWidth = 51;
-            compositionsDataGridView.Size = new System.Drawing.Size(776, 305);
+            compositionsDataGridView.Size = new System.Drawing.Size(786, 312);
             compositionsDataGridView.TabIndex = 3;
             // 
             // CompositionsForm

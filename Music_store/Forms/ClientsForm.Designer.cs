@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             clientsDataGridView = new System.Windows.Forms.DataGridView();
             AddClient = new System.Windows.Forms.Button();
             EditClient = new System.Windows.Forms.Button();
@@ -38,38 +38,40 @@
             // 
             // clientsDataGridView
             // 
-            clientsDataGridView.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(192, 255, 255);
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            clientsDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            clientsDataGridView.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(192, 255, 255);
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            clientsDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            clientsDataGridView.BackgroundColor = System.Drawing.Color.LightBlue;
             clientsDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             clientsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             clientsDataGridView.GridColor = System.Drawing.SystemColors.InfoText;
             clientsDataGridView.Location = new System.Drawing.Point(12, 39);
             clientsDataGridView.Name = "clientsDataGridView";
+            clientsDataGridView.ReadOnly = true;
             clientsDataGridView.RowHeadersWidth = 51;
             clientsDataGridView.Size = new System.Drawing.Size(776, 278);
             clientsDataGridView.TabIndex = 7;
             // 
             // AddClient
             // 
-            AddClient.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            AddClient.Location = new System.Drawing.Point(178, 382);
+            AddClient.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            AddClient.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            AddClient.Location = new System.Drawing.Point(23, 373);
             AddClient.Name = "AddClient";
-            AddClient.Size = new System.Drawing.Size(94, 29);
+            AddClient.Size = new System.Drawing.Size(149, 38);
             AddClient.TabIndex = 6;
-            AddClient.Text = "добавить";
+            AddClient.Text = "Добавить";
             AddClient.UseVisualStyleBackColor = false;
             AddClient.Click += AddClient_Click;
             // 
             // EditClient
             // 
-            EditClient.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            EditClient.Location = new System.Drawing.Point(23, 373);
+            EditClient.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            EditClient.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            EditClient.Location = new System.Drawing.Point(178, 373);
             EditClient.Name = "EditClient";
             EditClient.Size = new System.Drawing.Size(149, 38);
             EditClient.TabIndex = 5;
@@ -79,12 +81,13 @@
             // 
             // DeleteClient
             // 
-            DeleteClient.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            DeleteClient.Location = new System.Drawing.Point(278, 382);
+            DeleteClient.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            DeleteClient.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            DeleteClient.Location = new System.Drawing.Point(333, 373);
             DeleteClient.Name = "DeleteClient";
-            DeleteClient.Size = new System.Drawing.Size(94, 29);
+            DeleteClient.Size = new System.Drawing.Size(149, 38);
             DeleteClient.TabIndex = 4;
-            DeleteClient.Text = "Удалить музыканта";
+            DeleteClient.Text = "Удалить";
             DeleteClient.UseVisualStyleBackColor = false;
             DeleteClient.Click += DeleteClient_Click;
             // 

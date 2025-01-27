@@ -33,7 +33,6 @@ namespace Music_store
             }
         }
 
-
         // Общий метод для получения данных из базы
         private static List<T> ExecuteReader<T>(string query, Func<NpgsqlDataReader, T> map, Action<NpgsqlCommand> addParameters = null)
         {
@@ -55,6 +54,7 @@ namespace Music_store
             }
             return result;
         }
+        
         public static readonly Dictionary<string, string> ClassToTableMap = new()
         {
             { "Ensembles", "ensembles_catalog" },
@@ -70,12 +70,10 @@ namespace Music_store
             {
                 return tableName;
             }
-            // Логируем перед выбросом исключения
             Console.WriteLine($"Ошибка: неизвестный класс {className}. Проверьте ClassToTableMap.");
             throw new ArgumentException($"Неизвестный класс: {className}");
         }
 
-        // Пример метода FindMaxId с использованием GetTableName
         public static int FindMaxId(string className)
         {
             using (var connection = new NpgsqlConnection(ConnectionString))
@@ -162,11 +160,9 @@ namespace Music_store
             }
             catch (InvalidCastException ex)
             {
-                // Логируйте исключение или выводите его на консоль
                 Console.WriteLine($"Ошибка при чтении данных: {ex.Message}");
-                throw; // Или обработайте ошибку по-другому
+                throw; 
             }
-
         }
 
         public static void AddClient(Client client)
@@ -217,7 +213,7 @@ namespace Music_store
                 reader.GetString(1),
                 reader.GetInt32(2),
                 reader.GetInt32(3),
-                reader.GetDateTime(4)
+                reader.GetInt32(4)
             ));
         }
 
@@ -315,7 +311,8 @@ namespace Music_store
                 }
             }
         }
-        // Получает список доступных идентификаторов (Id), которые отсутствуют в таблице базы данных указанной сущности.
+
+        // Получает список доступных идентификаторов, которые отсутствуют в таблице базы данных указанной сущности.
         public static List<int> GetAvailableIdsForEntity(string entityName)
 {
             try
@@ -377,29 +374,7 @@ namespace Music_store
 
 
 
-        public static void AddCompositionWithProcedure(string title, int musicianId, int ensembleId, DateTime releaseDate)
-        {
-            using (var connection = new NpgsqlConnection(ConnectionString))
-            {
-                connection.Open();
-                using (var command = new NpgsqlCommand("CALL add_composition(@Title, @MusicianId, @EnsembleId, @ReleaseDate)", connection))
-                {
-                    command.Parameters.AddWithValue("@Title", title);
-                    command.Parameters.AddWithValue("@MusicianId", musicianId);
-                    command.Parameters.AddWithValue("@EnsembleId", ensembleId);
-                    command.Parameters.AddWithValue("@ReleaseDate", releaseDate);
-
-                    try
-                    {
-                        command.ExecuteNonQuery();
-                    }
-                    catch (PostgresException ex)
-                    {
-                        MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка добавления", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-            }
-        }
+       
         // Получение всех пластинок из базы данных
         public static List<Vinyl> GetVinyls()
         {
@@ -528,7 +503,6 @@ namespace Music_store
                 else
                     UpdateVinyl(vinyl);
             }
-
         }
     }
 }

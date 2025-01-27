@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             ensemblesDataGridView = new System.Windows.Forms.DataGridView();
-            ViewMusicians = new System.Windows.Forms.Button();
+            DeleteEnsemble = new System.Windows.Forms.Button();
             AddEnsemble = new System.Windows.Forms.Button();
             EditEnsemble = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)ensemblesDataGridView).BeginInit();
@@ -37,42 +37,43 @@
             // 
             // ensemblesDataGridView
             // 
-            ensemblesDataGridView.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            ensemblesDataGridView.BackgroundColor = System.Drawing.Color.LightBlue;
             ensemblesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             ensemblesDataGridView.GridColor = System.Drawing.SystemColors.Desktop;
-            ensemblesDataGridView.Location = new System.Drawing.Point(12, 12);
+            ensemblesDataGridView.Location = new System.Drawing.Point(3, 3);
             ensemblesDataGridView.Name = "ensemblesDataGridView";
             ensemblesDataGridView.ReadOnly = true;
             ensemblesDataGridView.RowHeadersWidth = 51;
-            ensemblesDataGridView.Size = new System.Drawing.Size(648, 426);
+            ensemblesDataGridView.Size = new System.Drawing.Size(807, 362);
             ensemblesDataGridView.TabIndex = 0;
             // 
-            // ViewMusicians
+            // DeleteEnsemble
             // 
-            ViewMusicians.BackColor = System.Drawing.Color.SkyBlue;
-            ViewMusicians.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
-            ViewMusicians.FlatAppearance.CheckedBackColor = System.Drawing.Color.SkyBlue;
-            ViewMusicians.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SkyBlue;
-            ViewMusicians.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
-            ViewMusicians.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            ViewMusicians.Location = new System.Drawing.Point(666, 82);
-            ViewMusicians.Name = "ViewMusicians";
-            ViewMusicians.Size = new System.Drawing.Size(94, 29);
-            ViewMusicians.TabIndex = 1;
-            ViewMusicians.Text = "button1";
-            ViewMusicians.UseVisualStyleBackColor = false;
+            DeleteEnsemble.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            DeleteEnsemble.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
+            DeleteEnsemble.FlatAppearance.CheckedBackColor = System.Drawing.Color.SkyBlue;
+            DeleteEnsemble.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SkyBlue;
+            DeleteEnsemble.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
+            DeleteEnsemble.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            DeleteEnsemble.Location = new System.Drawing.Point(322, 400);
+            DeleteEnsemble.Name = "DeleteEnsemble";
+            DeleteEnsemble.Size = new System.Drawing.Size(149, 38);
+            DeleteEnsemble.TabIndex = 1;
+            DeleteEnsemble.Text = "Удалить";
+            DeleteEnsemble.UseVisualStyleBackColor = false;
+            DeleteEnsemble.Click += DeleteEnsemble_Click;
             // 
             // AddEnsemble
             // 
-            AddEnsemble.BackColor = System.Drawing.Color.SkyBlue;
+            AddEnsemble.BackColor = System.Drawing.SystemColors.ActiveCaption;
             AddEnsemble.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
             AddEnsemble.FlatAppearance.CheckedBackColor = System.Drawing.Color.SkyBlue;
             AddEnsemble.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SkyBlue;
             AddEnsemble.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
             AddEnsemble.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            AddEnsemble.Location = new System.Drawing.Point(666, 12);
+            AddEnsemble.Location = new System.Drawing.Point(12, 400);
             AddEnsemble.Name = "AddEnsemble";
-            AddEnsemble.Size = new System.Drawing.Size(94, 29);
+            AddEnsemble.Size = new System.Drawing.Size(149, 38);
             AddEnsemble.TabIndex = 2;
             AddEnsemble.Text = "Добавить";
             AddEnsemble.UseVisualStyleBackColor = false;
@@ -80,15 +81,15 @@
             // 
             // EditEnsemble
             // 
-            EditEnsemble.BackColor = System.Drawing.Color.SkyBlue;
+            EditEnsemble.BackColor = System.Drawing.SystemColors.ActiveCaption;
             EditEnsemble.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
             EditEnsemble.FlatAppearance.CheckedBackColor = System.Drawing.Color.SkyBlue;
             EditEnsemble.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SkyBlue;
             EditEnsemble.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SkyBlue;
             EditEnsemble.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            EditEnsemble.Location = new System.Drawing.Point(666, 47);
+            EditEnsemble.Location = new System.Drawing.Point(167, 400);
             EditEnsemble.Name = "EditEnsemble";
-            EditEnsemble.Size = new System.Drawing.Size(122, 29);
+            EditEnsemble.Size = new System.Drawing.Size(149, 38);
             EditEnsemble.TabIndex = 3;
             EditEnsemble.Text = "Редактировать";
             EditEnsemble.UseVisualStyleBackColor = false;
@@ -98,10 +99,10 @@
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(800, 450);
+            ClientSize = new System.Drawing.Size(859, 527);
             Controls.Add(EditEnsemble);
             Controls.Add(AddEnsemble);
-            Controls.Add(ViewMusicians);
+            Controls.Add(DeleteEnsemble);
             Controls.Add(ensemblesDataGridView);
             Name = "EnsemblesForm";
             Text = "Ансамбли";
@@ -113,7 +114,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView ensemblesDataGridView;
-        private System.Windows.Forms.Button ViewMusicians;
+        private System.Windows.Forms.Button DeleteEnsemble;
         private System.Windows.Forms.Button AddEnsemble;
         private System.Windows.Forms.Button EditEnsemble;
     }

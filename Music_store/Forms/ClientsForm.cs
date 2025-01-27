@@ -23,7 +23,7 @@ namespace Music_store
             // Устанавливаем русские названия столбцов
             var columnHeaders = new Dictionary<string, string>
             {
-                { "Id", "Индекс" },
+                { "Id", "идентификатор" },
                 { "Name", "Имя" },
                 { "Surname", "Фамилия" },
                 { "Birthday", "Дата рождения" },
@@ -66,7 +66,8 @@ namespace Music_store
                 if (result == DialogResult.Yes)
                 {
                     Database.DeleteClient(selectedClient.Id); // Удаляем из базы
-                    LoadClients(); // Перезагружаем список
+                    LoadClients();
+                    MessageBox.Show("Клиент удален.", "Удаление", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else

@@ -69,6 +69,7 @@ namespace Music_store
                 {
                     Database.DeleteEnsemble(selectedEnsemble.Id); // Удаляем из базы
                     LoadEnsembles(); // Перезагружаем список
+                    MessageBox.Show("Ансамбль удален.", "Удаление", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else
@@ -81,19 +82,5 @@ namespace Music_store
         {
 
         }
-
-        //private void ViewMusicians_Click(object sender, EventArgs e)
-        //{
-        //    if (ensemblesDataGridView.SelectedRows.Count > 0)
-        //    {
-        //        var selectedEnsemble = (Ensemble)ensemblesDataGridView.SelectedRows[0].DataBoundItem;
-        //        var musiciansForm = new MusiciansForm(selectedEnsemble.Id);
-        //        musiciansForm.ShowDialog(); // Открываем форму музыкантов
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Выберите ансамбль для просмотра музыкантов.");
-        //    }
-        //}
     }
 }

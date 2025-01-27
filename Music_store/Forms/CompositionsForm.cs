@@ -11,6 +11,7 @@ using Music_store.Entities;
 
 namespace Music_store
 {
+
     public partial class CompositionsForm : Form
     {
         public CompositionsForm()
@@ -30,14 +31,14 @@ namespace Music_store
             var compositions = Database.GetCompositions();
             compositionsDataGridView.DataSource = compositions;
             var columnHeaders = new Dictionary<string, string>
-            {
-                { "Id", "Индекс" },
-                { "Name", "Имя" },
-                { "Surname", "Фамилия" },
-                { "MusicianId", "Индекс музыканта" },
-                { "EnsembleId", "Индекс ансамбля" },
-                { "ReleaseYear", "Год выпуска" }
-            };
+        {
+            { "Id", "Идентификатор" },
+            { "Name", "Имя" },
+            { "Surname", "Фамилия" },
+            { "MusicianId", "Индекс музыканта" },
+            { "EnsembleId", "Индекс ансамбля" },
+            { "ReleaseYear", "Год выпуска" }
+        };
             Menu.SetColumnHeaders(compositionsDataGridView, columnHeaders);
         }
 
@@ -86,9 +87,8 @@ namespace Music_store
                 {
                     // Удаление из базы данных
                     Database.DeleteComposition(selectedComposition.Id);
-
-                    // Перезагрузка списка
                     LoadCompositions();
+                    MessageBox.Show("Композиция удалена.", "Удаление", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else
@@ -98,4 +98,3 @@ namespace Music_store
         }
     }
 }
-

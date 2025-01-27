@@ -12,11 +12,11 @@ namespace Music_store.Entities
         public string Name { get; set; }
         public int MusicianId { get; set; }
         public int EnsembleId { get; set; }
-        public DateTime ReleaseYear { get; set; }
+        public int ReleaseYear { get; set; }
 
         public Composition() { }
 
-        public Composition(int id, string name, int musicianId, int ensembleId, DateTime releaseYear)
+        public Composition(int id, string name, int musicianId, int ensembleId, int releaseYear)
         {
             this.Id = id;
             this.Name = name;
