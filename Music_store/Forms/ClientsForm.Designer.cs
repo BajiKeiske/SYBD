@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             clientsDataGridView = new System.Windows.Forms.DataGridView();
             AddClient = new System.Windows.Forms.Button();
             EditClient = new System.Windows.Forms.Button();
@@ -38,12 +38,12 @@
             // 
             // clientsDataGridView
             // 
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(192, 255, 255);
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            clientsDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(192, 255, 255);
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            clientsDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             clientsDataGridView.BackgroundColor = System.Drawing.Color.LightBlue;
             clientsDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             clientsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -57,9 +57,9 @@
             // 
             // AddClient
             // 
-            AddClient.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            AddClient.BackColor = System.Drawing.Color.Azure;
             AddClient.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            AddClient.Location = new System.Drawing.Point(23, 373);
+            AddClient.Location = new System.Drawing.Point(11, 353);
             AddClient.Name = "AddClient";
             AddClient.Size = new System.Drawing.Size(149, 38);
             AddClient.TabIndex = 6;
@@ -69,9 +69,9 @@
             // 
             // EditClient
             // 
-            EditClient.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            EditClient.BackColor = System.Drawing.Color.Azure;
             EditClient.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            EditClient.Location = new System.Drawing.Point(178, 373);
+            EditClient.Location = new System.Drawing.Point(166, 353);
             EditClient.Name = "EditClient";
             EditClient.Size = new System.Drawing.Size(149, 38);
             EditClient.TabIndex = 5;
@@ -81,9 +81,9 @@
             // 
             // DeleteClient
             // 
-            DeleteClient.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            DeleteClient.BackColor = System.Drawing.Color.Azure;
             DeleteClient.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            DeleteClient.Location = new System.Drawing.Point(333, 373);
+            DeleteClient.Location = new System.Drawing.Point(321, 353);
             DeleteClient.Name = "DeleteClient";
             DeleteClient.Size = new System.Drawing.Size(149, 38);
             DeleteClient.TabIndex = 4;

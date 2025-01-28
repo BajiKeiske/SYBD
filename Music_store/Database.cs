@@ -366,14 +366,6 @@ namespace Music_store
                 command => command.Parameters.AddWithValue("@id", ensembleId)
             );
         }
-
-
-
-
-
-
-
-
        
         // Получение всех пластинок из базы данных
         public static List<Vinyl> GetVinyls()

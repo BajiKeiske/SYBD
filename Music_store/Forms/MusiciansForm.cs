@@ -27,7 +27,7 @@ namespace Music_store
 
             var columnHeaders = new Dictionary<string, string>
             {
-                { "Id", "Индекс" },
+                { "Id", "Идентификатор" },
                 { "Name", "Имя" },
                 { "Surname", "Фамилия" },
                 { "Instrument", "Инструмент" },

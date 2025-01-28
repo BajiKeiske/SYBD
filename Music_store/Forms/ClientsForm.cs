@@ -23,12 +23,12 @@ namespace Music_store
             // Устанавливаем русские названия столбцов
             var columnHeaders = new Dictionary<string, string>
             {
-                { "Id", "идентификатор" },
+                { "Id", "Идентификатор" },
                 { "Name", "Имя" },
                 { "Surname", "Фамилия" },
                 { "Birthday", "Дата рождения" },
                 { "Email", "Адрес электронной почты" },
-                { "PhoneNumber", "Номер телефона" }
+                { "Phone_number", "Номер телефона" }
             };
             Menu.SetColumnHeaders(clientsDataGridView, columnHeaders);
         }

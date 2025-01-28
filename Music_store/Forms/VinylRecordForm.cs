@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Reflection;
+using System.IO;
 
 namespace Music_store
 {
@@ -21,6 +22,29 @@ namespace Music_store
         {
             InitializeComponents();
             LoadVinyls();
+            CustomizeForm();
+        }
+
+        private void CustomizeForm()
+        {
+            // Изменяем стиль кнопок
+            foreach (Control control in this.Controls)
+            {
+                if (control is FlowLayoutPanel panel)
+                {
+                    foreach (Control subControl in panel.Controls)
+                    {
+                        if (subControl is Button button)
+                        {
+                            button.FlatStyle = FlatStyle.Popup;
+                            button.BackColor = Color.Azure;
+                        }
+                    }
+                }
+            }
+
+            // Изменяем фон таблицы
+            dgvVinyls.BackgroundColor = Color.LightBlue;
         }
 
         private void InitializeComponents()
@@ -87,45 +111,80 @@ namespace Music_store
         {
             // Загружаем данные из базы
             var vinyls = Database.GetVinyls();
-            dgvVinyls.DataSource = vinyls;
 
             // Генерация столбцов таблицы
             dgvVinyls.Columns.Clear();
-            dgvVinyls.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Id", HeaderText = "ID", Visible = false });
+            dgvVinyls.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Id", HeaderText = "Идентификатор (ID)", Visible = true });
             dgvVinyls.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "LabelNumber", HeaderText = "Номер этикетки" });
             dgvVinyls.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Title", HeaderText = "Название" });
             dgvVinyls.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "ReleaseYear", HeaderText = "Год выпуска" });
-            dgvVinyls.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "MusicianId", HeaderText = "ID музыканта" });
-            dgvVinyls.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "EnsembleId", HeaderText = "ID ансамбля" });
+            dgvVinyls.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "MusicianId", HeaderText = "Идентификатор музыканта" });
+            dgvVinyls.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "EnsembleId", HeaderText = "Идентификатор ансамбля" });
             dgvVinyls.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Genre", HeaderText = "Жанр" });
             dgvVinyls.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "WholesalePrice", HeaderText = "Оптовая цена" });
             dgvVinyls.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "RetailPrice", HeaderText = "Розничная цена" });
             dgvVinyls.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "SoldLastYear", HeaderText = "Продано в прошлом году" });
             dgvVinyls.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "SoldThisYear", HeaderText = "Продано в этом году" });
             dgvVinyls.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Stock", HeaderText = "Остаток" });
+
+            // Добавляем колонку для изображения
+            var imageColumn = new DataGridViewImageColumn
+            {
+                DataPropertyName = "Image", // Название свойства в модели Vinyl
+                HeaderText = "Изображение",
+                ImageLayout = DataGridViewImageCellLayout.Zoom // Масштабирование, чтобы изображение было вписано в ячейку
+            };
+            dgvVinyls.Columns.Add(imageColumn);
+
+            // Устанавливаем высоту строк для улучшения видимости изображений
+            dgvVinyls.RowTemplate.Height = 50; // Увеличиваем высоту строк
+
+            // Устанавливаем источник данных для DataGridView
+            dgvVinyls.DataSource = vinyls;
         }
+
         private void ShowEditForm(Vinyl vinyl)
         {
-            // Создаём форму с фиксированным размером
+            if (vinyl == null)
+            {
+                vinyl = new Vinyl();
+            }
+
             var form = new Form
             {
-                Text = vinyl == null ? "Добавить пластинку" : "Редактировать пластинку",
-                Size = new Size(400, 620), // Установим фиксированную ширину и высоту
-                FormBorderStyle = FormBorderStyle.FixedDialog, // Запрещаем изменение размеров
-                MaximizeBox = false, // Убираем кнопку максимизации
-                MinimizeBox = false // Убираем кнопку минимизации
+                Text = vinyl.Id == 0 ? "Добавить пластинку" : "Редактировать пластинку",
+                Size = new Size(400, 620),
+                FormBorderStyle = FormBorderStyle.FixedDialog,
+                MaximizeBox = false,
+                MinimizeBox = false
             };
 
-            // Панель для размещения элементов
             var panel = new FlowLayoutPanel
             {
                 Dock = DockStyle.Fill,
                 Padding = new Padding(10),
                 AutoScroll = true,
-                WrapContents = false, // Элементы располагаются вертикально
+                WrapContents = false,
                 FlowDirection = FlowDirection.TopDown
             };
             form.Controls.Add(panel);
+
+            // Словарь для русификации полей
+            var fieldLabels = new Dictionary<string, string>
+    {
+        { "LabelNumber", "Номер этикетки" },
+        { "Title", "Название" },
+        { "ReleaseYear", "Год выпуска" },
+        { "MusicianId", "Идентификатор музыканта" },
+        { "EnsembleId", "Идентификатор ансамбля" },
+        { "Genre", "Жанр" },
+        { "WholesalePrice", "Оптовая цена" },
+        { "RetailPrice", "Розничная цена" },
+        { "SoldLastYear", "Продано в прошлом году" },
+        { "SoldThisYear", "Продано в этом году" },
+        { "Stock", "Остаток" },
+        { "Image", "Изображение" }
+    };
 
             controls = new Dictionary<string, Control>();
             var properties = typeof(Vinyl).GetProperties(BindingFlags.Public | BindingFlags.Instance);
@@ -134,27 +193,25 @@ namespace Music_store
             {
                 if (property.Name == "Id") continue;
 
-                // Создаём подпись
                 var label = new Label
                 {
-                    Text = property.Name,
+                    Text = fieldLabels.ContainsKey(property.Name) ? fieldLabels[property.Name] : property.Name,
                     AutoSize = true,
                     Width = 360
                 };
 
                 Control control = null;
 
-                // Создаём соответствующий контрол в зависимости от типа свойства
                 if (property.PropertyType == typeof(string))
                 {
                     control = new TextBox { Width = 360 };
                 }
-                else if (property.PropertyType == typeof(decimal))
+                else if (property.PropertyType == typeof(decimal) || property.PropertyType == typeof(int))
                 {
                     control = new NumericUpDown
                     {
                         Width = 360,
-                        DecimalPlaces = 2,
+                        DecimalPlaces = property.PropertyType == typeof(decimal) ? 2 : 0,
                         Minimum = 0,
                         Maximum = 1000000
                     };
@@ -164,18 +221,32 @@ namespace Music_store
                     control = new DateTimePicker
                     {
                         Width = 360,
-                        Value = DateTime.Now, // Устанавливаем текущую дату по умолчанию
-                        MinDate = new DateTime(1753, 1, 1) // SQL Server совместимая минимальная дата
+                        Value = DateTime.Now
                     };
                 }
-                else if (property.PropertyType == typeof(int))
+                else if (property.PropertyType == typeof(byte[]))
                 {
-                    control = new NumericUpDown
+                    var btnUploadImage = new Button
                     {
-                        Width = 360,
-                        Minimum = 0,
-                        Maximum = 1000000
+                        Text = "Загрузить изображение",
+                        AutoSize = true
                     };
+                    btnUploadImage.Click += (s, e) =>
+                    {
+                        using (var openFileDialog = new OpenFileDialog
+                        {
+                            Filter = "Изображения|*.bmp;*.jpg;*.jpeg;*.png;*.gif"
+                        })
+                        {
+                            if (openFileDialog.ShowDialog() == DialogResult.OK)
+                            {
+                                var imageBytes = File.ReadAllBytes(openFileDialog.FileName);
+                                property.SetValue(vinyl, imageBytes);
+                                MessageBox.Show("Изображение загружено успешно.", "Загрузка изображения", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                        }
+                    };
+                    control = btnUploadImage;
                 }
 
                 if (control != null)
@@ -184,26 +255,13 @@ namespace Music_store
                     panel.Controls.Add(control);
                     controls[property.Name] = control;
 
-                    if (vinyl != null)
-                    {
-                        var value = property.GetValue(vinyl);
-                        if (control is TextBox textBox) textBox.Text = value?.ToString();
-                        else if (control is NumericUpDown numericUpDown) numericUpDown.Value = Convert.ToDecimal(value);
-                        else if (control is DateTimePicker dateTimePicker)
-                        {
-                            if (value is DateTime dateTimeValue && dateTimeValue >= dateTimePicker.MinDate)
-                            {
-                                dateTimePicker.Value = dateTimeValue;
-                            }
-                            else
-                            {
-                                dateTimePicker.Value = DateTime.Now;
-                            }
-                        }
-                    }
+                    var value = property.GetValue(vinyl);
+                    if (control is TextBox textBox) textBox.Text = value?.ToString();
+                    else if (control is NumericUpDown numericUpDown) numericUpDown.Value = Convert.ToDecimal(value ?? 0);
+                    else if (control is DateTimePicker dateTimePicker && value is DateTime dateTimeValue) dateTimePicker.Value = dateTimeValue;
                 }
             }
-            // Кнопка сохранения
+
             var btnSave = new Button
             {
                 Text = "Сохранить",
@@ -211,16 +269,28 @@ namespace Music_store
             };
             btnSave.Click += (s, e) =>
             {
-                if (vinyl == null) vinyl = new Vinyl();
-
                 foreach (var property in properties)
                 {
                     if (controls.ContainsKey(property.Name))
                     {
                         var control = controls[property.Name];
-                        if (control is TextBox textBox) property.SetValue(vinyl, textBox.Text);
-                        else if (control is NumericUpDown numericUpDown) property.SetValue(vinyl, Convert.ChangeType(numericUpDown.Value, property.PropertyType));
-                        else if (control is DateTimePicker dateTimePicker) property.SetValue(vinyl, dateTimePicker.Value);
+                        if (control is TextBox textBox)
+                        {
+                            if (string.IsNullOrWhiteSpace(textBox.Text))
+                            {
+                                MessageBox.Show($"Поле '{fieldLabels[property.Name]}' обязательно для заполнения.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                return;
+                            }
+                            property.SetValue(vinyl, textBox.Text);
+                        }
+                        else if (control is NumericUpDown numericUpDown)
+                        {
+                            property.SetValue(vinyl, Convert.ChangeType(numericUpDown.Value, property.PropertyType));
+                        }
+                        else if (control is DateTimePicker dateTimePicker)
+                        {
+                            property.SetValue(vinyl, dateTimePicker.Value);
+                        }
                     }
                 }
 
@@ -234,6 +304,7 @@ namespace Music_store
             panel.Controls.Add(btnSave);
             form.ShowDialog();
         }
+
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
@@ -285,6 +356,5 @@ namespace Music_store
             MessageBox.Show("Все изменения сохранены.", "Сохранение", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
-
 }
 

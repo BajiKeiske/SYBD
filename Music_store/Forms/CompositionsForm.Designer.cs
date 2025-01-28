@@ -37,7 +37,7 @@
             // 
             // EditComposition
             // 
-            EditComposition.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            EditComposition.BackColor = System.Drawing.Color.Azure;
             EditComposition.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             EditComposition.Location = new System.Drawing.Point(167, 350);
             EditComposition.Name = "EditComposition";
@@ -49,7 +49,7 @@
             // 
             // AddComposition
             // 
-            AddComposition.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            AddComposition.BackColor = System.Drawing.Color.Azure;
             AddComposition.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             AddComposition.Location = new System.Drawing.Point(12, 350);
             AddComposition.Name = "AddComposition";
@@ -61,7 +61,7 @@
             // 
             // deleteCompositions
             // 
-            deleteCompositions.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            deleteCompositions.BackColor = System.Drawing.Color.Azure;
             deleteCompositions.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             deleteCompositions.Location = new System.Drawing.Point(322, 350);
             deleteCompositions.Name = "deleteCompositions";

@@ -49,7 +49,7 @@
             // 
             // DeleteEnsemble
             // 
-            DeleteEnsemble.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            DeleteEnsemble.BackColor = System.Drawing.Color.Azure;
             DeleteEnsemble.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
             DeleteEnsemble.FlatAppearance.CheckedBackColor = System.Drawing.Color.SkyBlue;
             DeleteEnsemble.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SkyBlue;
@@ -65,7 +65,7 @@
             // 
             // AddEnsemble
             // 
-            AddEnsemble.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            AddEnsemble.BackColor = System.Drawing.Color.Azure;
             AddEnsemble.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
             AddEnsemble.FlatAppearance.CheckedBackColor = System.Drawing.Color.SkyBlue;
             AddEnsemble.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SkyBlue;
@@ -81,7 +81,7 @@
             // 
             // EditEnsemble
             // 
-            EditEnsemble.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            EditEnsemble.BackColor = System.Drawing.Color.Azure;
             EditEnsemble.FlatAppearance.BorderColor = System.Drawing.Color.SkyBlue;
             EditEnsemble.FlatAppearance.CheckedBackColor = System.Drawing.Color.SkyBlue;
             EditEnsemble.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SkyBlue;

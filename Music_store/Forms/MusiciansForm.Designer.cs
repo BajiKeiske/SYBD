@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             deleteMusician = new System.Windows.Forms.Button();
             EditMusician = new System.Windows.Forms.Button();
             AddMusician = new System.Windows.Forms.Button();
@@ -38,7 +38,7 @@
             // 
             // deleteMusician
             // 
-            deleteMusician.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            deleteMusician.BackColor = System.Drawing.Color.Azure;
             deleteMusician.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             deleteMusician.Location = new System.Drawing.Point(322, 355);
             deleteMusician.Name = "deleteMusician";
@@ -50,7 +50,7 @@
             // 
             // EditMusician
             // 
-            EditMusician.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            EditMusician.BackColor = System.Drawing.Color.Azure;
             EditMusician.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             EditMusician.Location = new System.Drawing.Point(167, 355);
             EditMusician.Name = "EditMusician";
@@ -62,25 +62,25 @@
             // 
             // AddMusician
             // 
-            AddMusician.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            AddMusician.BackColor = System.Drawing.Color.Azure;
             AddMusician.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             AddMusician.Location = new System.Drawing.Point(12, 355);
             AddMusician.Name = "AddMusician";
             AddMusician.Size = new System.Drawing.Size(149, 38);
             AddMusician.TabIndex = 2;
-            AddMusician.Text = "добавить";
+            AddMusician.Text = "Добавить";
             AddMusician.UseVisualStyleBackColor = false;
             AddMusician.Click += AddMusician_Click;
             // 
             // musiciansDataGridView
             // 
             musiciansDataGridView.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(192, 255, 255);
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            musiciansDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(192, 255, 255);
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            musiciansDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             musiciansDataGridView.BackgroundColor = System.Drawing.Color.LightBlue;
             musiciansDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             musiciansDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;

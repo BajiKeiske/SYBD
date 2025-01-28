@@ -40,7 +40,7 @@
             // musicians
             // 
             musicians.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonMenu;
-            musicians.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            musicians.BackColor = System.Drawing.Color.Azure;
             musicians.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             musicians.ForeColor = System.Drawing.Color.Black;
             musicians.Location = new System.Drawing.Point(250, 111);
@@ -56,7 +56,7 @@
             // compositions
             // 
             compositions.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonMenu;
-            compositions.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            compositions.BackColor = System.Drawing.Color.Azure;
             compositions.Cursor = System.Windows.Forms.Cursors.Hand;
             compositions.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             compositions.ForeColor = System.Drawing.Color.Black;
@@ -73,7 +73,7 @@
             // ensembles
             // 
             ensembles.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonMenu;
-            ensembles.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            ensembles.BackColor = System.Drawing.Color.Azure;
             ensembles.Cursor = System.Windows.Forms.Cursors.Hand;
             ensembles.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             ensembles.ForeColor = System.Drawing.Color.Black;
@@ -90,7 +90,7 @@
             // vinylRecords
             // 
             vinylRecords.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonMenu;
-            vinylRecords.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            vinylRecords.BackColor = System.Drawing.Color.Azure;
             vinylRecords.Cursor = System.Windows.Forms.Cursors.Hand;
             vinylRecords.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             vinylRecords.ForeColor = System.Drawing.Color.Black;
@@ -107,7 +107,7 @@
             // clientele
             // 
             clientele.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonMenu;
-            clientele.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            clientele.BackColor = System.Drawing.Color.Azure;
             clientele.Cursor = System.Windows.Forms.Cursors.Hand;
             clientele.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             clientele.ForeColor = System.Drawing.Color.Black;

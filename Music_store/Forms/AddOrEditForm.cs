@@ -41,6 +41,23 @@ namespace Music_store
 
             GenerateFormFields();
         }
+        private bool ValidateFields()
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control is TextBox textBox)
+                {
+                    if (string.IsNullOrWhiteSpace(textBox.Text))
+                    {
+                        MessageBox.Show("Все текстовые поля должны быть заполнены!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+
+
         // Генерация элементов управления на основе свойств сущности
         private void GenerateFormFields()
         {
@@ -203,13 +220,28 @@ namespace Music_store
                 if (_controls.TryGetValue(property.Name, out var control))
                 {
                     if (control is TextBox textBox)
+                    {
+                        // Проверка на пустое значение
+                        if (string.IsNullOrWhiteSpace(textBox.Text))
+                        {
+                            string friendlyName = GetFriendlyName(property.Name); // Получаем русское название поля
+                            MessageBox.Show($"Поле \"{friendlyName}\" обязательно для заполнения.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return; // Прерываем сохранение
+                        }
                         property.SetValue(_entity, textBox.Text);
+                    }
                     else if (control is NumericUpDown numericUpDown)
+                    {
                         property.SetValue(_entity, Convert.ToInt32(numericUpDown.Value));
+                    }
                     else if (control is DateTimePicker dateTimePicker)
+                    {
                         property.SetValue(_entity, dateTimePicker.Value);
+                    }
                     else if (control is ComboBox comboBox)
+                    {
                         property.SetValue(_entity, comboBox.SelectedValue);
+                    }
                 }
             }
 
@@ -224,6 +256,8 @@ namespace Music_store
             DialogResult = DialogResult.OK;
             Close();
         }
+
+
 
         // Получает заполненный объект сущности
         public object GetEntity()
